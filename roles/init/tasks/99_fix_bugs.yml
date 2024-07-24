@@ -1,0 +1,19 @@
+---
+# Fix sysctl bug in openEuler
+- name: Copy sysctl.conf to 99-sysctl.conf
+  copy: 
+    src: /etc/sysctl.conf
+    dest: /etc/sysctl.d/99-sysctl.conf
+    remote_src: yes
+  ignore_errors: true
+
+- name: Delete sysctl.conf
+  file: 
+    path: /etc/sysctl.conf
+    state: absent
+
+# Mask tmp.mount
+- name: Mask tmp.mount
+  systemd:
+    name: tmp.mount
+    masked: true

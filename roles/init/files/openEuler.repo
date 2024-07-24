@@ -1,0 +1,23 @@
+[openEuler-22.03-LTS-SP4-everything]
+name=openEuler-22.03-LTS-SP4-everything @ x86_64
+baseurl=http://192.168.161.1/openEuler/2203-SP4/x86_64/everything/
+gpgcheck=0
+enabled=1
+
+[openEuler-22.03-LTS-SP4-update]
+name=openEuler-22.03-LTS-SP4-update @ x86_64
+baseurl=http://192.168.161.1/openEuler/2203-SP4/x86_64/update/
+gpgcheck=0
+enabled=1
+
+[openEuler-22.03-LTS-SP4-epol]
+name=openEuler-22.03-LTS-SP4-epol @ x86_64
+baseurl=http://192.168.161.1/openEuler/2203-SP4/x86_64/epol/
+gpgcheck=0
+enabled=1
+
+[openEuler-22.03-LTS-SP4-epol]
+name=openEuler-22.03-LTS-SP4-epol @ x86_64
+baseurl=http://192.168.161.1/openEuler/2203-SP4/x86_64/epol/
+gpgcheck=0
+enabled=1
