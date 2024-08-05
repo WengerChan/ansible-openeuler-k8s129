@@ -11,15 +11,17 @@ global_defs {
 
 ! https://www.cnblogs.com/arjenlee/p/9258188.html
 vrrp_script check_haproxy {
-    script "killall -0 haproxy"
+    script "/usr/bin/killall -0 haproxy"
     interval 2
     weight 2
     timeout 2
+    fall 2
+    rise 1
 }
 
 vrrp_instance haproxy-vip {
     state {{ kp_stat }}
-    priority {% if kp_stat == "MASTER" %}101{% else %}99{% endif %}
+    priority {% if kp_stat == "MASTER" %}100{% else %}99{% endif %}
     
     interface {{ keepalived_interface }}
     virtual_router_id 111

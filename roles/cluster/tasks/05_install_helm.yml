@@ -19,6 +19,11 @@
     remote_src: yes
   when: is_master == 1
 
+- name: Add execute perms to helm
+  shell: |
+    chmod +x /usr/local/bin/helm
+  when: is_master == 1
+
 - name: Clean up helm untar directory
   file:
     path: /tmp/linux-amd64
